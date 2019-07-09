@@ -1,0 +1,2 @@
+module GameShareHelper
+end
