@@ -6,6 +6,11 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 gem 'bcrypt'
+gem 'faker'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'will_paginate', '3.1.7'
+gem 'bootstrap-will_paginate', '1.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'bootstrap-sass'
 # Use Puma as the app server
@@ -29,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '4.3.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'rails-i18n'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -65,6 +70,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
