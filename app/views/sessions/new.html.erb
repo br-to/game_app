@@ -9,8 +9,9 @@
       <%= f.email_field :email ,class: 'form-control' %>
 
       <%= f.label :password,"パスワード" %>
+     
       <%= f.password_field :password, class: 'form-control' %>
-
+      
        <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
         <span>ログイン状態を保存する</span>
@@ -21,5 +22,6 @@
     <% end %>
 
     <p>新規登録ならこちらへ <%= link_to "新規登録", signup_path %></p>
+    <%= link_to "パスワードを忘れた場合", new_password_reset_path %>
   </div>
 </div>

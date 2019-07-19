@@ -34,10 +34,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '4.3.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'rails-i18n'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'mail-iso-2022-jp'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
