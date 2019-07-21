@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     attr_accessor :remember_token,:activation_token,:reset_token
+    has_many :microposts, dependent: :destroy
     before_save  :downcase_email
     before_create :create_activation_digest
     validates :name,presence:true,length:{maximum:50}
@@ -8,6 +9,7 @@ class User < ApplicationRecord
                                     uniqueness:{case_sensitive:false}
     has_secure_password
     validates :password,presence:true,length:{minimum:6}, allow_nil: true
+    
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -58,6 +60,10 @@ class User < ApplicationRecord
 
     def password_reset_expired?
       reset_sent_at < 2.hours.ago
+    end
+
+    def feed
+      Micropost.where("user_id = ?", id)
     end
 
     private

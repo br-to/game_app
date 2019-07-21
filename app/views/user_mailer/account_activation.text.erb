@@ -1,5 +1,7 @@
-こんにちは！ <%= @user.name %>,
 
-ゲームシェアへようこそ、ボタンをクリックしてアカウントを有効化してください:
+
+<%= @user.name %>様
+
+下のアカウント有効ボタンをクリックして有効化してください。
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

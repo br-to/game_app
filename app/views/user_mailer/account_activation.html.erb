@@ -1,10 +1,8 @@
 <h1>ゲームシェア</h1>
 
-<p>こんにちは！ <%= @user.name %>,</p>
+<p><%= @user.name %>様、</p>
 
-<p>
-ようこそゲームシェアへ、ボタンをクリックしてアカウントを有効化してください:
-</p>
+<p>下のアカウント有効ボタンをクリックして有効化してください。</p>
 
-<%= link_to "アカウントを有効化する", edit_account_activation_url(@user.activation_token,
+<%= link_to "アカウントの有効化", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
