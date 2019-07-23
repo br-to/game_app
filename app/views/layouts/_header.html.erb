@@ -3,10 +3,10 @@
     <%= link_to "ゲームシェア", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right ">
-        <li><%= link_to "Top", root_path %></li>
+        <li><%= link_to "トップ", root_path %></li>
         <li><%= link_to "ゲームシェアとは", help_path %></li>
           <% if logged_in? %>
-          <li><%= link_to "マイページ", users_path %></li>
+          <li><%= link_to "ユーザー", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               メニュー <b class="caret"></b>

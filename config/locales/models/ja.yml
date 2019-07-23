@@ -9,11 +9,3 @@ ja:
         password: パスワード
         password_cofirmation: パスワードの確認
 
-ja:       
-  activerecord:
-    models:
-      micropost: マイクロポスト
-    attributes:
-      micropost:
-        title: ゲームのタイトル
-        content: 感想やレビュー
