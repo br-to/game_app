@@ -1,0 +1,8 @@
+ja:       
+  activerecord:
+    models:
+      micropost: マイクロポスト
+    attributes:
+      micropost:
+        title: ゲームのタイトル
+        content: 感想やレビュー

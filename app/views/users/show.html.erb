@@ -10,8 +10,13 @@
         </div>
       </h1>
     </section>
+     <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+      <%= render 'follow_form' if logged_in? %>
   </aside>
    <div class="col-md-8">
+    
     <% if @user.microposts.any? %>
       <h3>投稿 (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
