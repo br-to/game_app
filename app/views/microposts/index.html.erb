@@ -1,0 +1,18 @@
+<div class="main posts-index">
+  <div class="container">
+    <% @microposts.each do |micropost| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          
+         
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            
+            <%= micropost.user.name %>
+          </div>
+          <%= micropost.title %>
+          <%= micropost.content %>
+        </div>
+        <% end %>
+     

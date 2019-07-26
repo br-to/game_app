@@ -23,6 +23,10 @@ class Micropost < ApplicationRecord
     favo_users.include?(user)
   end
 
+  def user
+     User.find_by(id: self.user_id)
+  end
+
   private
 
   
