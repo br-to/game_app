@@ -2,17 +2,16 @@
   <div class="container">
     <% @microposts.each do |micropost| %>
       <div class="posts-index-item">
-        <div class="post-left">
-          
-         
-        </div>
         <div class="post-right">
           <div class="post-user-name">
-            
-            <%= micropost.user.name %>
+            <%= link_to micropost.user.name, micropost.user %>
           </div>
           <%= micropost.title %>
           <%= micropost.content %>
         </div>
-        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
      

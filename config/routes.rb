@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'comments/create'
+  get 'comments/destroy'
   get 'password_resets/new'
   get 'password_resets/edit'
   get '/signup' =>'users#new'
@@ -19,7 +21,8 @@ Rails.application.routes.draw do
 end
  resources :account_activations, only: [:edit]
  resources :password_resets,     only: [:new, :create, :edit, :update]
- resources :microposts,          only: [:index,:show,:create, :destroy]
+ resources :microposts,          only: [:index, :show, :create, :destroy]
  resources :relationships,       only: [:create, :destroy]
  resources :likes,               only: [:create, :destroy]
+ resources :comments,            only: [:create, :destroy]
 end
