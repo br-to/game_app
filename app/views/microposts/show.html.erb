@@ -1,4 +1,5 @@
 <% provide(:title, "投稿詳細") %>
+ <div class= "row">
   <div>
     <p>投稿詳細<p>
   </div>
@@ -19,6 +20,11 @@
           <% end %>
           </span>
           <%= render "likes/like", micropost: @micropost %>  
+          <%= form_with(model: [@micropost, @comment], local: true) do |f| %>
+          <%= f.text_field :content, placeholder: "コメントを入力" %>
+          <%= f.submit "コメントする", class: "btn btn-primary" %>
+          <% end %>
         </li>
       </ol>
     </div>
+  </div>
