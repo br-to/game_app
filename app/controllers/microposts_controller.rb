@@ -9,6 +9,7 @@ class MicropostsController < ApplicationController
   def show
     @micropost = Micropost.find(params[:id])
     @user = @micropost.user
+    @comment = @micropost.comments.build 
   end
 
   def create
