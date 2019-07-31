@@ -8,7 +8,7 @@
   <span class="timestamp">
     <%= time_ago_in_words(micropost.created_at) %> 前投稿されました.
      <% if current_user?(micropost.user) %>
-      <%= link_to "削除", micropost, method: :delete,
+     <%= link_to "削除", micropost, method: :delete,
                                        data: { confirm: "削除してもよろしいですか?" } %>
      <% end %>
   </span>
