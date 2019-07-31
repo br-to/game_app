@@ -4,12 +4,13 @@ class CommentsController < ApplicationController
   def create
     @micropost = Micropost.find(params[:micropost_id])
     @comment = @micropost.comments.build(params_comment)
+    @comment.user_id = current_user.id
     if @comment.save
-      redirect_back(fallback_location: micropost_url(@micropost.id))
       flash[:success] = "コメントしました"
+      redirect_to micropost_url(@micropost.id)
     else
-      redirect_back(fallback_location: micropost_url(@micropost.id))
       flash[:danger] = "コメントできませんでした"
+      render 'microposts/show'
     end
   end
 
