@@ -24,11 +24,13 @@
           <%= f.text_field :content, placeholder: "コメントを入力" %>
           <%= f.submit "コメントする", class: "btn btn-primary" %>
           <% end %>
-          <ol class = "comments">
-            <li id="comment-<%= @comment.id %>" data-comment-id="<%= @comment.id %>">
-          <span class="content"><%= @comment.content %></span>
-            </li>
-          </ol>
+          <h2>コメント一覧</h2>
+          <% @comments.each do |c|  %>
+          <div>
+          <%= c.content %>
+          <hr>
+          </div>
+          <% end %>
         </li>
       </ol>
     </div>
