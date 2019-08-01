@@ -1,15 +1,16 @@
 class MicropostsController < ApplicationController
-    before_action :logged_in_user, only: [:index,:show,:create, :destroy]
+    before_action :logged_in_user, only: [:index, :show, :create, :destroy]
     before_action :correct_user,   only: :destroy
 
   def index
-    @microposts=Micropost.all.order(created_at: :desc)
+    @microposts = Micropost.all.order(created_at: :desc)
   end
-  #投稿詳細画面
+  
   def show
-    @micropost=Micropost.find(params[:id])
-    @user=@micropost.user
-    redirect_to root_url and return unless @user.activated?
+    @micropost = Micropost.find(params[:id])
+    @user = @micropost.user
+    @comments = @micropost.comments
+    @comment = @micropost.comments.build 
   end
 
   def create
